@@ -1,0 +1,115 @@
+package prelimlabexamactivity1; import java.util.Scanner; public class PrelimLabExamActivity1 {
+    public static void main(String[] args) {
+        double basicSalary, hra, da, ta, others, PF, IT, netSalary;
+        
+        //Scanner class object created
+        Scanner sc = new Scanner(System.in);
+        //taking user input of basic salary
+        System.out.println("Enter basic salary: ");
+        basicSalary = sc.nextDouble();
+        
+        //calculating HRA, DA and PF         hra = basicSalary * 0.03;         da = basicSalary * 0.12;         ta = basicSalary * 0.03;         others = basicSalary * 0.1125;
+        PF = basicSalary * 0.14;
+        IT = basicSalary * 0.15;
+        
+        
+        //Calculating net salary by adding basicSalary, hra, da and deducting PF
+from that
+        netSalary = basicSalary + hra + da + others + ta - (PF + IT);
+        System.out.println("HRA: " + hra);
+        System.out.println("DA: " + da);
+        System.out.println("TA: " + ta);
+        System.out.println("Others: " + others);
+        System.out.print("Tax cuts > ");
+        System.out.println("PF: " + PF);
+        System.out.print("Tax cuts > ");
+        System.out.println("IT: " + IT);
+        System.out.println("net salary: " + netSalary);
+    }
+    
+} PRELIM LAB EXAM ACTIVITY 2
+package prelimlabexamactivity2; import java.util.Scanner; public class PrelimLabExamActivity2 {
+    public static void main(String[] args) {         Scanner arr = new Scanner(System.in);         int[] array = new int[100];
+        int num;
+        System.out.println("Please enter 5: ");
+        
+        num = arr.nextInt();
+        System.out.println("Enter 5 elements of array: ");
+        
+        for(int i = 0; i < num; i++) {             array[i] = arr.nextInt();
+        }
+        System.out.println("Even elements are: ");
+        for (int i = 0; i < num; i++) {             if (array[i] % 2 == 0) {
+                System.out.print(array[i] + " \t");
+            }
+        }
+        
+        System.out.println("\n Odd elements: ");         for (int i = 0; i < num; i++) {             if (array[i] % 2 != 0) {
+                System.out.print(array[i] + " \t");
+            }
+        }
+        
+    }
+    
+} PRELIM LAB EXAM ACTIVITY 3
+package prelimlabexamactivity3; import java.util.Scanner; public class PrelimLabExamActivity3 {
+    public final static int MAX_SIZE = 100;
+    
+    public static void main(String[] args) {
+        Scanner remove = new Scanner(System.in);         int[] arr = new int[MAX_SIZE];
+        int size, pos;
+        
+        System.out.println("Enter size of array: ");         size = remove.nextInt();
+        System.out.println("Enter data in array: ");         for(int i = 0; i < size; i++) {             arr[i] = remove.nextInt();
+        }
+        
+        // position to delete
+        System.out.println("Enter position of element to delete: ");         pos = remove.nextInt();
+        
+        // invalid position input         if(pos < 0 || pos > size) {
+            System.out.print("Sorry, invalid position. Enter position between 1 
+to " + size);
+        } else {
+            for (int i = pos - 1; i < size - 1; i++) {                 arr[i] = arr[i + 1];
+            }             size--;
+            System.out.println("New data in array are: ");             for(int i = 0; i < size; i++) {
+                System.out.print(arr[i] + " \t");
+        }
+    }
+  }
+    
+}
+PRELIM LAB EXAM ACTIVITY 4
+package prelimlabexamactivity4; public class PrelimLabExamActivity4 {
+        public static void main(String[] args) {         for(int i = 0; i < 4; i++)
+        {
+                System.out.print("*");             for(int j = 0; j < i; j++)
+            {
+                System.out.print("A*");
+            }
+            System.out.println();
+        }
+    }
+    
+}
+PRELIM LAB EXAM ACTIVITY 5
+package prelimlabexamactivity5;
+import java.util.Scanner; import java.util.HashSet; import java.util.Set; import java.util.Arrays; public class PrelimLabExamActivity5 {
+    public static void main(String[] args) {         Scanner arr1 = new Scanner(System.in);
+        
+        Integer[] array = new Integer[8];
+        
+        
+        System.out.println("Enter 8 integer numbers: ");         for(int i = 0; i < array.length; i++) {             array[i] = arr1.nextInt();
+        }
+        System.out.println("Array elements: " + Arrays.toString(array));
+        Set<Integer> setArr = new HashSet<>(Arrays.asList(array));
+        System.out.println("Array's length after removal: " + setArr.size());
+        System.out.println("Elements: " + setArr);
+        
+        Arrays.sort(array);
+        System.out.println("Second largest element in array is " + 
+array[array.length - 2]);
+        System.out.println("Second smallest element in array is " + array[1]);
+    }
+}
